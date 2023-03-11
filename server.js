@@ -12,7 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.render('pages/indx.ejs');
+    var data=[];
+    res.render('pages/indx.ejs',{data});
 })
 app.get('/getdata', (req, res) => {
     var query = "select * from st_table order by student_id limit 10;";
